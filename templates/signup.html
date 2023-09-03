@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% block title %}Siggnup page{% endblock title %} 
+{% block content %}
+
+<h2 class="login-heading">Signup</h2>
+<form method="post" action="">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input
+      type="text"
+      class="form-control"
+      id="username"
+      placeholder="Enter username"
+      name="username"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      placeholder="Enter Email"
+      name="email"
+      required
+    />
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      placeholder="Enter password"
+      name="password"
+      required
+    />
+  </div>
+  {% for messages in messages %}
+  <div class="alert alert-danger" role="alert">{{messages}}</div>
+  {% endfor %}
+  <button type="submit" class="btn btn-primary btn-block">SignUp</button>
+</form>
+
+{% endblock content %}

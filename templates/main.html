@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block title %}Dashboard{% endblock title %} 
+{%block content %}
+
+<h2 class="login-heading">
+  Hello <span class="user_color">{{username}}</span><br />You are successfully
+  logined
+</h2>
+<a href="{% url 'logout' %}" class="logout-btn"
+  ><button type="submit" class="btn btn-danger btn-block">Logout</button></a
+>
+{% endblock content %}
